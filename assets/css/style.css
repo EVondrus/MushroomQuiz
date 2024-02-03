@@ -234,6 +234,7 @@ by adding an active class*/
   border-radius: 5px;
   border: 2px solid #3a3a3a;
   text-align: center;
+  user-select: none; /* Prevent the user from selecting the numbers*/
 }
 
 /* Time Line in Quiz header - Animation in JS*/
