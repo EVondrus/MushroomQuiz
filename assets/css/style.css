@@ -35,13 +35,15 @@ body {
   background-color:#faebd7;
   border-style: solid;
   box-shadow: 0 5px 10px rgba(59, 59, 59, 0.8);
+  max-width: 100%;
 }
 
 h1 {
   font-family: "Salsa", sans-serif;
   font-size: 3rem;
   color: #82820F;
-  padding: 5px 0px;
+  padding: 5px 0;
+  margin: 0;
 }
 
 /* Positioning all the boxes Absolute, in the center of the page */
@@ -50,7 +52,7 @@ h1 {
 .quiz-box,
 .result-box {
 position: absolute;
-top: 50%;
+top: 60%;
 left: 50%;
 transform: translate(-50%, -50%);
 border-radius: 5px;
@@ -67,6 +69,19 @@ by adding an active class*/
     z-index: 5; /* Keeping the elements on top of the other elements */
     pointer-events: auto; /* Make the elements clickable */
     transform: translate(-50%, -50%) scale(1); /* Keep elements appearing in the center of the page */
+}
+
+/* Start Button */
+.start-btn button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #faebd7;
+  background: #82820F;
+  padding: 15px 30px;
+  border: 2px solid #3a3a3a;
+  border-radius: 5px;
+  outline: none; /* Remove the default focus style */
+  cursor: pointer; /* Set cursor to pointer for better user interaction feedback */
 }
 
 
