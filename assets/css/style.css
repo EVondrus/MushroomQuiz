@@ -196,7 +196,7 @@ by adding an active class*/
   font-weight: bold;
   position: relative; /* To position the timer */
   z-index: 2; /* Keeping the element on top of the other elements */
-  box-shadow: 0 3px 5px 1px rgba(58, 58, 58, 0.2);
+  box-shadow: 0 3px 5px 1px rgba(58, 58, 58, 0.3);
   
 }
 
@@ -234,6 +234,17 @@ by adding an active class*/
   border-radius: 5px;
   border: 2px solid #3a3a3a;
   text-align: center;
+}
+
+/* Time Line in Quiz header - Animation in JS*/
+.quiz-box .time-line {
+  height: 4px;
+  width: 100%;
+  /* Position the line at the bottom of header*/
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  background: #3a3a3a;
 }
 
 
