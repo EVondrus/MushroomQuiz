@@ -43,3 +43,30 @@ h1 {
   color: #82820F;
   padding: 5px 0px;
 }
+
+/* Positioning all the boxes Absolute, in the center of the page */
+.start-btn,
+.info-box,
+.quiz-box,
+.result-box {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 5px;
+box-shadow: 0 5px 10px rgb(58, 58, 58, 0.8);       
+
+}
+
+/* Being able to control the boxes appearance and behavior transitions with JS 
+by adding an active class*/
+.info-box.activeInfo,
+.quiz-box.activeQuiz,
+.result-box.activeResult {
+    opacity: 1; /* Make the elements visible */
+    z-index: 5; /* Keeping the elements on top of the other elements */
+    pointer-events: auto; /* Make the elements clickable */
+    transform: translate(-50%, -50%) scale(1); /* Keep elements appearing in the center of the page */
+}
+
+
