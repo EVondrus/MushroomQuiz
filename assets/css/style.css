@@ -27,3 +27,19 @@ body {
       background-color: #82820F;
   
 }
+
+/* Main Heading */
+.title-container {
+  margin: 60px 5%;
+  padding: 15px;
+  background-color:#faebd7;
+  border-style: solid;
+  box-shadow: 0 5px 10px rgba(59, 59, 59, 0.8);
+}
+
+h1 {
+  font-family: "Salsa", sans-serif;
+  font-size: 3rem;
+  color: #82820F;
+  padding: 5px 0px;
+}
