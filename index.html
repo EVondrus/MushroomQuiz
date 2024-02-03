@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,85 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Mushroom Quiz</title>
 </head>
-<body>
-  <body>
-  
 
-    <script src="assets/js/script.js"></script>
-  </body>
+<body>
+  <!-- Title -->
+  <div class="title-container">
+    <h1 class="title">Mushroom Quiz</h1>
+  </div>
+
+  <!-- Start Quiz Button,
+         Dissapears when clicked -->
+  <div class="start-btn"><button>Start Quiz</button></div>
+
+  <!-- Info Box,
+         Displayed after start btn, 
+         Dissapears when quit or restart btn is clicked by the user -->
+  <div class="info-box">
+
+    <div class="info-title"><span>Rules of the Game</span></div>
+    <!-- Simple list containing the rules -->
+    <div class="info-list">
+      <div class="info"><span class="info-num">1.</span> <span>15 seconds</span> is all the time you've got to answer,
+        per each question.</div>
+      <div class="info"><span class="info-num">2.</span> Once the clock runs out, you can't make any changes.
+        <br><span>Choose wisely!</span>
+      </div>
+      <div class="info"><span class="info-num">3.</span> Once you've selected your answer, <span>there's no going
+          back.</span></div>
+      <div class="info"><span class="info-num">4.</span> No escape routes here! You can <span>not exit</span> from the
+        Quiz while you're playing.</div>
+      <div class="info"><span class="info-num">5.</span> Score big by nailing those correct answers! - <span>Let the
+          game begin!</span></div>
+    </div>
+    <div class="buttons">
+      <!-- If clicked, return to the display of the start btn-->
+      <button class="quit-btn">Exit Quiz</button>
+      <!-- If clicked, continue and display quiz box and start Timer-->
+      <button class="restart-btn">Continue</button>
+    </div>
+  </div>
+
+  <!-- Quiz Box -->
+  <div class="quiz-box">
+    <header>
+      <!--Inserting Current Question Mumber from JS-->
+      <div class="question-count">
+        Question <span id="current-question">0</span>/10
+      </div>
+      <div class="timer">
+        <!--Inserting Stop Timer from JS-->
+        <div class="time-text">Time Left</div>
+        <div class="timer-sec">15</div>
+      </div>
+      <!-- Animated Time Line from JS-->
+      <div class="time-line"></div>
+    </header>
+    <!-- Question and Options of the Quiz box -->
+    <section>
+      <div class="quiz">
+        <!-- Inserting Question from JS-->
+        <h2 id="question">Question displayed here</h2>
+
+        <div class="question-options">
+          <!-- Inserting Answer Options from JS, Timer stops when any button is clicked -->
+          <button class="answer-btn">Answer 1</button>
+          <button class="answer-btn">Answer 2</button>
+          <button class="answer-btn">Answer 3</button>
+          <button class="answer-btn">Answer 4</button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer of Quiz box-->
+    <footer>
+      <div class="current-score">
+        <!-- Inserting Current Score Number from JS-->
+      </div>
+      <button class="next-btn">Next Question</button>
+    </footer>
+  </div>
+  <!-- Javascript Files-->
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
