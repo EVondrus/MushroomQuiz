@@ -163,7 +163,7 @@ by adding an active class*/
   border-radius: 5px;
   outline: none; /* To remove the default focus style */
   cursor: pointer; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Smoothing transition when becoming visible */
   
 }
 
@@ -171,3 +171,72 @@ by adding an active class*/
   padding: 15px 40px;
   margin-right: 15px;
 }
+
+/* Quiz Box */
+.quiz-box {
+  width: 80%;
+  max-width: 600px;
+  background: #faebd7;
+  opacity: 1;
+  transition: all 0.3s ease; 
+  pointer-events: none; /* Make the elements unclickable */
+  transform: translate(-50%, -40%) scale(0.9);
+  box-shadow: 0 0 5px 5px rgb(58, 58, 58); /* To give a 3D effect behind the container*/
+}
+
+/* Quiz Box Header */
+.quiz-box header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-radius: 5px 5px 0 0; /* Rounded corner effect on the top*/
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: relative; /* To position the timer */
+  z-index: 2; /* Keeping the element on top of the other elements */
+  box-shadow: 0 3px 5px 1px rgba(58, 58, 58, 0.2);
+  
+}
+
+/* Question Counter */
+.quiz-box header .question-count {
+  font-size: 1.2rem;
+}
+
+/* Timer box */
+.quiz-box header .timer {
+  width: 145px; /* Set a fixed width for the timer */
+  margin-left: auto; /* Auto margin to push the timer to the right */
+  padding: 5px 10px;
+  border: 2px solid #3a3a3a;
+  border-radius: 5px;
+  background: #82820F;
+  color: #faebd7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Timer text */
+.quiz-box header .timer .time-text {
+  font-size: 1.2rem;
+  user-select: none; /* Prevent the user from selecting the text */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+/* Timer Number */
+.quiz-box header .timer .timer-sec {
+  font-size: 1.4rem;
+  width: 40px;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #3a3a3a;
+  text-align: center;
+}
+
+
+
+
+
