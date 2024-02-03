@@ -58,9 +58,10 @@
 
   <!-- Quiz Box -->
   <div class="quiz-box">
+    <!-- Header for Currect Question and Timer-->
     <header>
-      <!--Inserting Current Question Mumber from JS-->
       <div class="question-count">
+        <!--Inserting Current Question Mumber from JS-->
         Question <span id="current-question">0</span>/10
       </div>
       <div class="timer">
@@ -71,7 +72,8 @@
       <!-- Animated Time Line from JS-->
       <div class="time-line"></div>
     </header>
-    <!-- Question and Options of the Quiz box -->
+
+    <!-- Section for Question and Options -->
     <section>
       <div class="quiz">
         <!-- Inserting Question from JS-->
@@ -86,13 +88,34 @@
         </div>
       </div>
     </section>
-    <!-- Footer of Quiz box-->
+
+    <!-- Footer for Current Score and Next Question -->
     <footer>
       <div class="current-score">
         <!-- Inserting Current Score Number from JS-->
       </div>
+      <!-- When clicked display next question and restart Timer-->
       <button class="next-btn">Next Question</button>
     </footer>
+  </div>
+
+  <!-- Results Box -->
+  <div class="result-box">
+    <div class="result-inner-box">
+      <div class="result-img">
+        <!-- <img src="assets/images/mushrooms.png" alt="A pig smiling mushroom companioned by two small mushrooms"> -->
+      </div>
+      <div class="result-title">Congrats! You did it!</div>
+      <div class="final-score">
+        <!-- Inserting Score Result from JS-->
+      </div>
+      <div class="buttons">
+        <!-- If clicked run Quiz box -->
+        <button class="restart-btn">Play Again</button>
+        <!-- If clicked return to Start btn -->
+        <button class="quit-btn">Quit Quiz</button>
+      </div>
+    </div>
   </div>
   <!-- Javascript Files-->
   <script src="assets/js/script.js"></script>
