@@ -88,12 +88,14 @@ by adding an active class*/
 .info-box {
   width: 100%;
   max-width: 600px;
+  top: 60%;
+  left: 50%;
   background: #faebd7;
   opacity: 0;
   transition: all 0.3s ease; /* To make the transition smooth */
   pointer-events: none; /* Make the elements unclickable */
   /*Positioning the element and giving it a slightly smaller size than its original dimensions for visual effects */
-  transform: translate(-50%, -30%) scale(0.9); 
+  transform: translate(-50%, -50%) scale(0.9); 
 }
 
 /* Title styles of Info Box */
