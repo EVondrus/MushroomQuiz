@@ -62,7 +62,7 @@
     <header>
       <div class="question-count">
         <!--Inserting Current Question Mumber from JS-->
-        Question <span id="current-question">0</span>/10
+        Question <span id="current-question">0</span>/<span id="total-question">10</span>
       </div>
       <div class="timer">
         <!--Inserting Stop Timer from JS-->
@@ -92,8 +92,10 @@
     <footer>
       <div class="current-score">
         <!-- Inserting Current Score Number from JS-->
+        <p class="scores">Correct<span id="correct-score">0</span>
+          <p class="scores">Incorrect<span id="incorrect-score">0</span>
       </div>
-      <!-- When clicked display next question and restart Timer-->
+      <!-- When clicked, display next question and restart Timer-->
       <button class="next-btn">Next Question</button>
     </footer>
   </div>
