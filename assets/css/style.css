@@ -280,6 +280,25 @@ section .answer-options .answer-btn:hover {
   color: #faebd7;
 }
 
+/* Styles for correct and incorrect answers */
+section .answer-options .answer-btn.correct {
+  background: #60A561;
+  color: #faebd7;
+  border: 1px solid #faebd7;
+}
+
+section .answer-options .answer-btn.incorrect {
+  background: #FF5A4E;
+  color: #faebd7;
+  border: 1px solid #faebd7;
+}
+
+section .answer-options .answer-btn.disabled {
+  pointer-events: none;
+}
+
+/* ADD ICONS CHECK AND CROSS ICONS AND THEIR STYLES */
+
 
 
 
