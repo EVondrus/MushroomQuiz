@@ -438,17 +438,17 @@ footer .next-btn.show {
   
 }
 
-.buttons button.quit {
+.buttons button.quit-btn {
   background: #FF5A4E;
   padding: 0 25px;
 }
 
-.buttons button.quit:hover {
+.buttons button.quit-btn:hover {
   background: #faebd7;
   color: #FF5A4E;
 }
 
-.buttons button.restart:hover {
+.buttons button.restart-btn:hover {
   background: #faebd7;
   color: olive;
 }

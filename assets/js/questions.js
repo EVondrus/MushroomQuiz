@@ -1,7 +1,7 @@
 // Creating an array passing the questions, options and answers
 let questions = [
   {
-    question: "What is the main purpose of a mushroom cap?"
+    question: "What is the main purpose of a mushroom cap?",
     answers: [
       { text: "Reproduction", correct: false },
       { text: "Protection", correct: true },
@@ -9,10 +9,9 @@ let questions = [
       { text: "Attracting insects", correct: false },
        
     ]
-
   },
   {
-    question: "Which mushroom is commonly used in cooking?"
+    question: "Which mushroom is commonly used in cooking?",
     answers: [
       { text: "Fly Agaric", correct: false },
       { text: "Autumn Skullcap", correct: false },
@@ -22,7 +21,7 @@ let questions = [
     ]
   },
   {
-    question: "Where are spores produced in a mushroom?"
+    question: "Where are spores produced in a mushroom?",
     answers: [
       { text: "Stipe", correct: false },
       { text: "Gills", correct: true },
@@ -31,7 +30,7 @@ let questions = [
     ]
   },
   {
-    question: "Which mushroom is known for it's glowing in the dark properties?"
+    question: "Which mushroom is known for it's glowing in the dark properties?",
     answers: [
       { text: "Morel", correct: false },
       { text: "Chanterelle", correct: false },
@@ -40,7 +39,7 @@ let questions = [
     ]
   },
   {
-    question: "Which toxic mushroom has a bright red cap with white dots?"
+    question: "Which toxic mushroom has a bright red cap with white dots?",
     answers: [
       { text: "Fly Agaric", correct: true },
       { text: "Death Cap", correct: false },
@@ -49,7 +48,7 @@ let questions = [
     ]
   },
   {
-    question: "What is the common name for Pleurotus ostreatus?"
+    question: "What is the common name for Pleurotus ostreatus?",
     answers: [
       { text: "Shiitake", correct: false },
       { text: "Oyster Mushroom", correct: true },
@@ -58,7 +57,7 @@ let questions = [
     ]
   },
   {
-    question: "What is the primary role of the mycelium in mushrooms?"
+    question: "What is the primary role of the mycelium in mushrooms?",
     answers: [
       { text: "Producing spores", correct: false },
       { text: "Conducting photosynthesis", correct: false },
@@ -67,7 +66,7 @@ let questions = [
     ]
   },
   {
-    question: "Which mushroom is often used as a meat substitute in vegetarian dishes?"
+    question: "Which mushroom is often used as a meat substitute in vegetarian dishes?",
     answers: [
       { text: "Portabello", correct: true },
       { text: "Enoki", correct: false },
@@ -76,7 +75,7 @@ let questions = [
     ]
   },
   {
-    question: "Which mushroom is known for its medicinal benefits?"
+    question: "Which mushroom is known for its medicinal benefits?",
     answers: [
       { text: "Morel", correct: false },
       { text: "Chanterelle", correct: false },
@@ -85,7 +84,7 @@ let questions = [
     ]
   },
   {
-    question: "What is the most commonly cultivated mushroom worldwide?"
+    question: "What is the most commonly cultivated mushroom worldwide?",
     answers: [
       { text: "Lions Mane", correct: false },
       { text: "Chanterelle", correct: false },
@@ -95,3 +94,4 @@ let questions = [
   }
 
 ];
+
