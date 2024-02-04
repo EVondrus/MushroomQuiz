@@ -248,6 +248,38 @@ by adding an active class*/
   background: #3a3a3a;
 }
 
+/* Quiz Box Main Section, Question and Answers */
+section {
+  padding: 25px 30px 20px 30px;
+
+}
+/* Question */
+section .quiz-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: left;
+
+}
+/* Answers */
+section .answer-options .answer-btn {
+  background-color: #faebd7;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  text-align: left;
+  padding: 10px;
+  border: 2px solid #3a3a3a;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+
+section .answer-options .answer-btn:hover {
+  background: olive;
+  color: #faebd7;
+}
+
 
 
 
