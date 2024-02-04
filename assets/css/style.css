@@ -179,7 +179,7 @@ by adding an active class*/
   width: 80%;
   max-width: 600px;
   background: #faebd7;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease; 
   pointer-events: none; /* Make the elements unclickable */
   transform: translate(-50%, -40%) scale(0.9);
@@ -303,6 +303,7 @@ section .answer-options .answer-btn.incorrect {
 }
 
 section .answer-options .answer-btn.disabled {
+  /* So it's not possible to click other buttons */
   pointer-events: none;
 }
 
@@ -380,13 +381,14 @@ footer .next-btn.show {
   align-items: center;
   justify-content: center;
   opacity: 0;
+  pointer-events: none;
   transition: all 0.3s ease; 
   transform: translate(-50%, -50%) scale(0.9);
   box-shadow: 0 0 5px 5px rgba(58, 58, 58, 0.5);
 }
 
 /* Result Box Image */
-.result-box img{
+.result-box img {
   width: 150px;
   height: 125px
   margin: 20px 0;
