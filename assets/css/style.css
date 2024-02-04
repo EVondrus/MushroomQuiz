@@ -367,6 +367,54 @@ footer .next-btn.show {
   transform: scale(1); /* Make the button appear in its original size */
 }
 
+/* Result Box */
+.result-box {
+  width: 80%;
+  max-width: 600px;
+  background: #faebd7;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.3s ease; 
+  transform: translate(-50%, -50%) scale(0.9);
+  box-shadow: 0 0 5px 5px rgba(58, 58, 58, 0.5);
+}
+
+/* Result Box Image */
+.result-box img{
+  width: 150px;
+  height: 125px
+  margin: 20px 0;
+}
+
+/* Result Box Text */
+.result-box .result-title {
+  font-size: 2rem;
+  font-family: "Salsa", sans-serif;
+  font-weight: bold;
+  color: olive;
+  margin-bottom: 20px;
+}
+
+.result-box .final-score span {
+  font-family: "Salsa", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  display: flex;
+}
+
+.result-box .final-score span p {
+  font-family: "Salsa", sans-serif;
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
+
+
 
 
 
