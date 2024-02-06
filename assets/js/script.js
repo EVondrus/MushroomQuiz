@@ -25,18 +25,16 @@ exitBtn.onclick = ()=>{
 }
 
 
-
-// if continue (continueBtn) clicked
-//hide info box, remove activeInfo class
-//show quiz box, add activeQuiz class
-//call showQestions function
-//give 1 parameter to queCounter
-//call startTimer function
-//call startTimerLine function
+// if continueBtn clicked
 continueBtn.onclick = ()=>{
+//hide info box, show quiz box
   infoBox.classList.remove("activeInfo"); 
   quizBox.classList.add("activeQuiz"); 
+//call function to run the questions and answer
   showQuestions(); 
+//give 1 parameter to current question
+//call startTimer function
+//call startTimerLine function
 }
 
 
@@ -44,26 +42,7 @@ continueBtn.onclick = ()=>{
 /*Create variables to store the questions count, question number,
  score, counter, counterLine, width value and time value*/
 
-
-
 // Select an element from the element
-
-
-// if quitQuiz button clicked
-//reload the current window
-
-
-
-// if restartQuiz (continueBtn) on results box clicked
-//show quiz box, add activeQuiz class
-//hide result box, remove activeResult class
-//call showQestions function
-//pass question number value to question Counter
-//clear the counter
-//clear counterLine
-//call startTimer function
-//call startTimerLine function
-//hide the next button, remove "show"
 
 
 //Quiz Box
@@ -170,13 +149,11 @@ let questions = [
 ];
 
 
-//get question
+
 let currentQuestionIndex = 0;
 let score = 0;
 
-
-
-/* Show question function */
+// Display questions and answers, update current question and score
 function  showQuestions() {
   // Remove the previous answer options
   resetState();
@@ -189,7 +166,10 @@ let questionNumber = currentQuestionIndex + 1;
 question.innerHTML = questionNumber + ". " + currentQuestion.question;
 console.log(answerOptions)
 
-// Display the answer options
+// Update the current question number in the span
+document.getElementById('current-question').textContent = questionNumber;
+
+// Display the answer options to the user
 currentQuestion.answers.forEach(answer => {
   let button = document.createElement("button");
   button.innerText = answer.text;
@@ -201,22 +181,23 @@ currentQuestion.answers.forEach(answer => {
     button.dataset.correct = answer.correct; 
   }
 
-  // Set up the event listener for answer buttons with select answer function
+  // Set event listener for answer buttons with select answer function
   button.addEventListener("click", selectAnswer);
 });
 }
 
-/* A Function to clear the answer options */
+
+/* Function to clear the answer options  */
 function resetState() {
   while (answerOptions.firstChild) {
     answerOptions.removeChild(answerOptions.firstChild);
   }
 }
 
-/* Create A function for selected answers
-Check if correct
-Disable answer buttons in the array
-nextBtn display, add show class */
+/* Function for selected answers
+Check if correct,
+Disable answer buttons,
+Display nextBtn */
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
@@ -235,22 +216,26 @@ function selectAnswer(e) {
 }
 
 
-
-
-// if nextB clicked
+// when nextBtn clicked
 //if question count is less than total question length
-//increment the currentQuestion value
-//call the showQestions function
-//clear counter
-//clear counterLine
-//call startTimer function
-//call startTimerLine function
-//hide the next button, remove "show"
+nextBtn.addEventListener("click", function() {
+if (currentQuestionIndex < questions.length - 1) {
+//increment the current question number in header
+currentQuestionIndex++;
+//show next question
+showQuestions();
 
-// Else
-//clear counter
-//clear counterLine
-//call Show Result function
+// Clear counter and counterLine function...
+
+
+// Hide the next button
+nextBtn.classList.remove("show");
+} else {
+  // Clear interval counter and counterLine
+  // Otherwise, if there are no more questions remaining, show the result
+  showResult();
+}
+});
 
 
 //Result Box 
@@ -272,6 +257,8 @@ function selectAnswer(e) {
 //call timer function
 //change the value of timeCount with time value
 //decrement the time value
+
+
 
 //if timer is less than 0
 //clear interval, clear counter
