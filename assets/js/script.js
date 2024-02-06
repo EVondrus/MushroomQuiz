@@ -39,8 +39,7 @@ continueBtn.onclick = ()=>{
 
 
 
-/*Create variables to store the questions count, question number,
- score, counter, counterLine, width value and time value*/
+/*Create variables to store the questions count, question number, counter, counterLine, width value and time value*/
 
 // Select an element from the element
 
@@ -196,15 +195,23 @@ function resetState() {
 
 /* Function for selected answers
 Check if correct,
+Display incorrect and/or correct answer
+Increase the score of correct or incorrectcl
 Disable answer buttons,
 Display nextBtn */
+let correctScore = 0;
+let incorrectScore = 0;
+
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect){
     selectedBtn.classList.add("correct");
+    // Increment the correct score by 1
+    document.getElementById('correct-score').textContent++;
   } else {
     selectedBtn.classList.add("incorrect");
+    document.getElementById('incorrect-score').textContent++;
   }
   Array.from(answerOptions.children).forEach(button => {
     if (button.dataset.correct === "true"){
