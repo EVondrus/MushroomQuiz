@@ -179,7 +179,7 @@ by adding an active class*/
   width: 80%;
   max-width: 600px;
   background: #faebd7;
-  opacity: 1;
+  opacity: 0;
   transition: all 0.3s ease; 
   pointer-events: none; /* Make the elements unclickable */
   transform: translate(-50%, -40%) scale(0.9);

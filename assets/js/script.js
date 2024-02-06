@@ -1,5 +1,5 @@
 //Select all elements required
-const startButton = document.querySelector(".start-btn button");
+const startBtn = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
 const exitButton = infoBox.querySelector(".buttons .quit-btn");
 const continueButton = infoBox.querySelector(".buttons .restart-btn");
@@ -12,6 +12,9 @@ const timeCount = document.querySelector(".timer .timer-sec");
 
 // if startQuiz (startBtn) clicked
 //show info box, add activeInfo class
+startBtn.onclick = ()=>{
+  infoBox.classList.add("activeInfo"); 
+}
 
 
 
