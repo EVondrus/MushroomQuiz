@@ -213,13 +213,27 @@ function resetState() {
   }
 }
 
-
-
 /* Create A function for selected answers
-Check if correct, add correct class
-Else, add incorrect class
-Disable answer buttons
+Check if correct
+Disable answer buttons in the array
 nextBtn display, add show class */
+function selectAnswer(e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if (isCorrect){
+    selectedBtn.classList.add("correct");
+  } else {
+    selectedBtn.classList.add("incorrect");
+  }
+  Array.from(answerOptions.children).forEach(button => {
+    if (button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextBtn.style.display = nextBtn.classList.add("show");
+}
+
 
 
 

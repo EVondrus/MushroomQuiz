@@ -284,10 +284,12 @@ section .answer-options .answer-btn {
   
 }
 
-section .answer-options .answer-btn:hover {
+/* Removes hover effect whenever user clicked on an answer */
+section .answer-options .answer-btn:hover:not([disabled]) {
   background: olive;
   color: #faebd7;
 }
+
 
 /* Styles for correct and incorrect answers */
 section .answer-options .answer-btn.correct {
