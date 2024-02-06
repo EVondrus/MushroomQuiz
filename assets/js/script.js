@@ -2,10 +2,10 @@
 const startBtn = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
 const exitBtn = infoBox.querySelector(".buttons .quit-btn");
-const continueButton = infoBox.querySelector(".buttons .restart-btn");
+const continueBtn = infoBox.querySelector(".buttons .restart-btn");
 const quizBox = document.querySelector(".quiz-box");
 const questionElement = document.getElementById("question");
-const answerOptions = document.querySelector("answer-options")
+const answerOptions = document.querySelector(".answer-options")
 const resultBox = document.querySelector(".result-box");
 const timeLine = document.querySelector("header .time-line");
 const timeCount = document.querySelector(".timer .timer-sec");
@@ -26,17 +26,23 @@ exitBtn.onclick = ()=>{
 
 
 
-// if continueQuiz (continueBtn) clicked
+// if continue (continueBtn) clicked
 //hide info box, remove activeInfo class
 //show quiz box, add activeQuiz class
 //call showQestions function
 //give 1 parameter to queCounter
 //call startTimer function
 //call startTimerLine function
+continueBtn.onclick = ()=>{
+  infoBox.classList.remove("activeInfo"); 
+  quizBox.classList.add("activeQuiz"); 
+  showQuestions(); 
+}
+
 
 
 /*Create variables to store the questions count, question number,
- user score, counter, counterLine, width value and time value*/
+ score, counter, counterLine, width value and time value*/
 
 
 
@@ -62,25 +68,152 @@ exitBtn.onclick = ()=>{
 
 //Quiz Box
 //get elements
+const question = document.getElementById("question");
+const nextBtn = document.querySelector("footer .next-btn");
 
 // Create an array passing the questions, answer options and set the correct answer
 // Get from question.js
+let questions = [
+  {
+    question: "What is the main purpose of a mushroom cap?",
+    answers: [
+      { text: "Reproduction", correct: false },
+      { text: "Protection", correct: true },
+      { text: "Collecting sunlight", correct: false },
+      { text: "Attracting insects", correct: false },
+       
+    ]
+  },
+  {
+    question: "Which mushroom is commonly used in cooking?",
+    answers: [
+      { text: "Fly Agaric", correct: false },
+      { text: "Autumn Skullcap", correct: false },
+      { text: "Button Mushroom", correct: true },
+      { text: "Inky Cap", correct: false },
+       
+    ]
+  },
+  {
+    question: "Where are spores produced in a mushroom?",
+    answers: [
+      { text: "Stipe", correct: false },
+      { text: "Gills", correct: true },
+      { text: "Cap", correct: false },
+      { text: "Annulus", correct: false },
+    ]
+  },
+  {
+    question: "Which mushroom is known for it's glowing in the dark properties?",
+    answers: [
+      { text: "Morel", correct: false },
+      { text: "Chanterelle", correct: false },
+      { text: "Shiitake", correct: false },
+      { text: "Jack O'Lantern", correct: true },
+    ]
+  },
+  {
+    question: "Which toxic mushroom has a bright red cap with white dots?",
+    answers: [
+      { text: "Fly Agaric", correct: true },
+      { text: "Death Cap", correct: false },
+      { text: "Sickener", correct: false },
+      { text: "False Morel", correct: false },
+    ]
+  },
+  {
+    question: "What is the common name for Pleurotus ostreatus?",
+    answers: [
+      { text: "Shiitake", correct: false },
+      { text: "Oyster Mushroom", correct: true },
+      { text: "Enoki", correct: false },
+      { text: "Morel", correct: false },
+    ]
+  },
+  {
+    question: "What is the primary role of the mycelium in mushrooms?",
+    answers: [
+      { text: "Producing spores", correct: false },
+      { text: "Conducting photosynthesis", correct: false },
+      { text: "Exchanging gases", correct: false },
+      { text: "Absorbing nutrients", correct: true },
+    ]
+  },
+  {
+    question: "Which mushroom is often used as a meat substitute in vegetarian dishes?",
+    answers: [
+      { text: "Portabello", correct: true },
+      { text: "Enoki", correct: false },
+      { text: "Oyster", correct: false },
+      { text: "Maitake", correct: false },
+    ]
+  },
+  {
+    question: "Which mushroom is known for its medicinal benefits?",
+    answers: [
+      { text: "Morel", correct: false },
+      { text: "Chanterelle", correct: false },
+      { text: "Cremin", correct: false },
+      { text: "Maitake", correct: true },
+    ]
+  },
+  {
+    question: "What is the most commonly cultivated mushroom worldwide?",
+    answers: [
+      { text: "Lions Mane", correct: false },
+      { text: "Chanterelle", correct: false },
+      { text: "White button", correct: true },
+      { text: "Oyster", correct: false },
+    ]
+  }
+
+];
 
 
 //get question
+let currentQuestionIndex = 0;
+let score = 0;
+
+
+
 /* Show question function */
-  // Remove the previous answer options 
+function  showQuestions() {
+  // Remove the previous answer options
+  resetState();
 
-  // Get the current question from the array
-  // Add 1 to index to display the correct question number
-  // Display the question
-  // Display the answer options
-  
+// Get the current question from the array
+// Add 1 to index to display the correct question number
+let currentQuestion = questions[currentQuestionIndex]; 
+let questionNumber = currentQuestionIndex + 1; 
+// Display the question
+question.innerHTML = questionNumber + ". " + currentQuestion.question;
+console.log(answerOptions)
+
+// Display the answer options
+currentQuestion.answers.forEach(answer => {
+  let button = document.createElement("button");
+  button.innerText = answer.text;
+  button.classList.add("answer-btn");
+  answerOptions.appendChild(button);
+
   // Set the data attribute for the correct answer
-  // Set up the event listener for answer buttons with select answer function
+  if (answer.correct) {
+    button.dataset.correct = answer.correct; 
+  }
 
-   
-/* Create A Function to remove the the previous answer options */
+  // Set up the event listener for answer buttons with select answer function
+  button.addEventListener("click", selectAnswer);
+});
+}
+
+/* A Function to clear the answer options */
+function resetState() {
+  while (answerOptions.firstChild) {
+    answerOptions.removeChild(answerOptions.firstChild);
+  }
+}
+
+
 
 /* Create A function for selected answers
 Check if correct, add correct class
