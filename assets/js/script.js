@@ -219,8 +219,9 @@ Check if correct,
 Display incorrect and/or correct answer
 Increase the score of correct or incorrect
 Disable answer buttons,
-Display nextBtn */
+Show next question after 1,5sec
 
+/** Selected answer */
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
@@ -243,29 +244,22 @@ function selectAnswer(e) {
     }
     button.disabled = true;
   });
-  nextBtn.style.display = nextBtn.classList.add("show");
+  setTimeout(showNextQuestion, 1500);
 }
 
 
-// when nextBtn clicked
-//if question count is less than total question length
-nextBtn.addEventListener("click", function() {
-  if (currentQuestionIndex < questions.length - 1) {
-  //increment the current question number in header
-  currentQuestionIndex++;
-  showQuestions();
-  startTimer();
-  startTimerLine();
-
-
-// Hide the next button
-nextBtn.classList.remove("show");
-} else {
-  // Clear interval counter and counterLine
-  // Otherwise, if there are no more questions remaining, show the result
-  showResult();
+/** Display Next Question */
+function showNextQuestion() {
+  if (currentQuestionIndex < questions.length - 1) { //if question count is less than total question length
+    currentQuestionIndex++; //increment the current question number in header
+    showQuestions();
+    startTimer();
+    startTimerLine();
+  } else {
+    // Otherwise, if there are no more questions remaining, show the result
+    showResult();
+  }
 }
-});
 
 
 //Result Box 
