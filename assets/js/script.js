@@ -300,12 +300,6 @@ function startTimer() {
 }
 
 
-
-//Timer function
-//if timer is less than 0
-//clear interval, clear counter
-
-
 //startTimerLine function- Animation
 // Set an interval to repeatedly call the 'timer' function
 // define the timer function
