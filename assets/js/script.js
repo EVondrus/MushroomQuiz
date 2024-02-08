@@ -34,14 +34,17 @@ continueBtn.onclick = ()=>{
   showQuestions(); 
 //give 1 parameter to current question
 //call startTimer function
+startTimer();
 //call startTimerLine function
 };
 
 
 
 /*Create variables to store the questions count, question number, counter, counterLine, width value and time value*/
-
-// Select an element from the element
+let timerInterval;
+let currentQuestionIndex = 0;
+let correctScore = 0;
+let incorrectScore = 0;
 
 
 //Quiz Box
@@ -148,20 +151,12 @@ let questions = [
 ];
 
 
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-// Display questions and answers, update current question and score
-function  showQuestions() {
-  // Remove the previous answer options
-  resetState();
-
-// Get the current question from the array
-// Add 1 to index to display the correct question number
-let currentQuestion = questions[currentQuestionIndex]; 
-let questionNumber = currentQuestionIndex + 1; 
-// Display the question
+/* Show question function */
+function showQuestions() {
+  resetState(); // Remove the previous answer options
+let currentQuestion = questions[currentQuestionIndex]; // Get the current question from the array
+let questionNumber = currentQuestionIndex + 1; // Add 1 to index to display the correct question number
+// Display the question to user
 question.innerHTML = questionNumber + ". " + currentQuestion.question;
 console.log(answerOptions);
 
@@ -199,12 +194,11 @@ Display incorrect and/or correct answer
 Increase the score of correct or incorrect
 Disable answer buttons,
 Display nextBtn */
-let correctScore = 0;
-let incorrectScore = 0;
 
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
+  clearInterval(timerInterval); //Stop the timer when any answer buttons are clicked
   if (isCorrect){
     selectedBtn.classList.add("correct");
     correctScore++;
@@ -230,9 +224,8 @@ nextBtn.addEventListener("click", function() {
   if (currentQuestionIndex < questions.length - 1) {
   //increment the current question number in header
   currentQuestionIndex++;
-  //show next question
   showQuestions();
-
+  startTimer();
 // Clear counter and counterLine function...
 
 
@@ -270,9 +263,8 @@ function showResult(){
     scoreMessage = '<span>You got <p>'+ correctScore +'</p> out of <p>'+ questions.length +'</p> AWESOME! You know your mushrooms!</span>';
   }
   finalScoreElement.innerHTML = scoreMessage;
+
 }
-
-
 
 
 //exitBtn button is clicked
@@ -280,13 +272,36 @@ function showResult(){
 
 //If restartBtn is clicked
 // showQuestion function
-//startTimer function
-//set counter value to 15
-//call timer function
-//change the value of timeCount with time value
-//decrement the time value
 
 
+
+/* Start timer function */
+function startTimer() {
+  time = 15; // Reset the time to 15 seconds
+  timeCount.textContent = time; // Update the timer display initially
+  clearInterval(timerInterval); // Clear any existing interval, prevent overlapping timers
+  // Start the interval
+  timerInterval = setInterval(() => { 
+    if (time <= 0) {
+      clearInterval(timerInterval); // Stop the timer if time reaches 0
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestions();
+        startTimer(); // Restart the timer for the next question
+      } else {
+        showResult(); // Show the result if no more questions remaining
+      }
+    } else {
+      time--; // Decrement the time if it's greater than 0
+      // Update the timer display
+      timeCount.textContent = time;
+    }
+  }, 1000); // Repeat every 1 second (1000 milliseconds)
+}
+
+
+
+//Timer function
 //if timer is less than 0
 //clear interval, clear counter
 
