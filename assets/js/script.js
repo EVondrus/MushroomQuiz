@@ -207,11 +207,12 @@ function selectAnswer(e) {
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect){
     selectedBtn.classList.add("correct");
-    // Increment the correct score by 1
-    document.getElementById('correct-score').textContent++;
+    correctScore++;
+    document.getElementById('correct-score').textContent = correctScore;
   } else {
     selectedBtn.classList.add("incorrect");
-    document.getElementById('incorrect-score').textContent++;
+    incorrectScore++;
+    document.getElementById('incorrect-score').textContent = incorrectScore;
   }
   Array.from(answerOptions.children).forEach(button => {
     if (button.dataset.correct === "true"){
