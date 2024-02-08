@@ -5,7 +5,7 @@ const exitBtn = infoBox.querySelector(".buttons .quit-btn");
 const continueBtn = infoBox.querySelector(".buttons .restart-btn");
 const quizBox = document.querySelector(".quiz-box");
 const questionElement = document.getElementById("question");
-const answerOptions = document.querySelector(".answer-options")
+const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const timeLine = document.querySelector("header .time-line");
 const timeCount = document.querySelector(".timer .timer-sec");
@@ -14,7 +14,7 @@ const timeCount = document.querySelector(".timer .timer-sec");
 //show info box, add activeInfo class
 startBtn.onclick = ()=>{
   infoBox.classList.add("activeInfo"); 
-}
+};
 
 //Info Box
 
@@ -22,7 +22,7 @@ startBtn.onclick = ()=>{
 //hide info box, remove activeInfo class
 exitBtn.onclick = ()=>{
   infoBox.classList.remove("activeInfo");
-}
+};
 
 
 // if continueBtn clicked
@@ -35,7 +35,7 @@ continueBtn.onclick = ()=>{
 //give 1 parameter to current question
 //call startTimer function
 //call startTimerLine function
-}
+};
 
 
 
@@ -163,7 +163,7 @@ let currentQuestion = questions[currentQuestionIndex];
 let questionNumber = currentQuestionIndex + 1; 
 // Display the question
 question.innerHTML = questionNumber + ". " + currentQuestion.question;
-console.log(answerOptions)
+console.log(answerOptions);
 
 // Update the current question number in the span
 document.getElementById('current-question').textContent = questionNumber;
@@ -196,7 +196,7 @@ function resetState() {
 /* Function for selected answers
 Check if correct,
 Display incorrect and/or correct answer
-Increase the score of correct or incorrectcl
+Increase the score of correct or incorrect
 Disable answer buttons,
 Display nextBtn */
 let correctScore = 0;
@@ -257,14 +257,12 @@ nextBtn.classList.remove("show");
 //
 
 //If restartBtn is clicked
-
 // showQuestion function
 //startTimer function
 //set counter value to 15
 //call timer function
 //change the value of timeCount with time value
 //decrement the time value
-
 
 
 //if timer is less than 0
