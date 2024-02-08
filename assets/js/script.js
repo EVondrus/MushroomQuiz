@@ -13,6 +13,7 @@ const timeCount = document.querySelector(".timer .timer-sec");
 // if startQuiz (startBtn) clicked
 //show info box, add activeInfo class
 startBtn.onclick = ()=>{
+  questions = shuffle(questions); //Shuffle questions
   infoBox.classList.add("activeInfo"); 
 };
 
@@ -54,6 +55,27 @@ let incorrectScore = 0;
 //get elements
 const question = document.getElementById("question");
 const nextBtn = document.querySelector("footer .next-btn");
+
+// Function to shuflle the questions
+// Credit: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
 
 // Create an array passing the questions, answer options and set the correct answer
 // Get from question.js
@@ -313,7 +335,7 @@ function startTimer() {
 // update the width of the HTML element. The width is increased by the value of 'time' "%"
 // if the time value exceeds 100%
 //clear counterLine
-let timeLine
+let timeLine;
 
 // Start timer line function
 function startTimerLine() {
