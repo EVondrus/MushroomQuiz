@@ -219,7 +219,7 @@ Check if correct,
 Display incorrect and/or correct answer
 Increase the score of correct or incorrect
 Disable answer buttons,
-Show next question after 1,5sec
+Show next question after 1,5sec */
 
 /** Selected answer */
 function selectAnswer(e) {
@@ -250,7 +250,7 @@ function selectAnswer(e) {
 
 /** Display Next Question */
 function showNextQuestion() {
-  if (currentQuestionIndex < questions.length - 1) { //if question count is less than total question length
+  if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++; //increment the current question number in header
     showQuestions();
     startTimer();
@@ -307,6 +307,9 @@ function startTimer() {
   timerInterval = setInterval(() => { 
     if (time <= 0) {
       clearInterval(timerInterval); // Stop the timer if time reaches 0
+      incorrectScore = incorrectScore + 1; // Incrementing incorrect score if no answer selected
+      document.getElementById('incorrect-score').textContent = incorrectScore;
+
       if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         showQuestions();
@@ -330,7 +333,7 @@ function startTimer() {
 // update the width of the HTML element. The width is increased by the value of 'time' "%"
 // if the time value exceeds 100%
 //clear counterLine
-let timeLine;
+let timeLine
 
 // Start timer line function
 function startTimerLine() {
