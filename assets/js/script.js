@@ -186,7 +186,7 @@ currentQuestion.answers.forEach(answer => {
 }
 
 
-/* Function to clear the answer options  */
+/* Function to clear the answer options */
 function resetState() {
   while (answerOptions.firstChild) {
     answerOptions.removeChild(answerOptions.firstChild);
@@ -226,11 +226,11 @@ function selectAnswer(e) {
 // when nextBtn clicked
 //if question count is less than total question length
 nextBtn.addEventListener("click", function() {
-if (currentQuestionIndex < questions.length - 1) {
-//increment the current question number in header
-currentQuestionIndex++;
-//show next question
-showQuestions();
+  if (currentQuestionIndex < questions.length - 1) {
+  //increment the current question number in header
+  currentQuestionIndex++;
+  //show next question
+  showQuestions();
 
 // Clear counter and counterLine function...
 
@@ -251,7 +251,28 @@ nextBtn.classList.remove("show");
 //hide info box, remove activeInfo class
 //hide quiz box, remove activeQuiz class
 //show result box, add activeResult class
-//pass the user score number and total question number
+//pass the users score, total question number and message
+function showResult(){
+  infoBox.classList.remove("activeInfo");
+  quizBox.classList.remove("activeQuiz");
+  resultBox.classList.add("activeResult");
+  let finalScoreElement = resultBox.querySelector(".final-score"); 
+
+  let scoreMessage;
+  if (correctScore <= 4){
+    scoreMessage = '<span>You got <p>'+ correctScore +'</p> out of <p>'+ questions.length +'</p> Better luck next time!</span>';
+  }
+  else if (correctScore >= 5 && correctScore <= 7){
+    scoreMessage = '<span>You got <p>'+ correctScore +'</p> out of <p>'+ questions.length +'</p> Good job! Just a little more now!</span>';
+  }
+  else if (correctScore >= 8 && correctScore <= 10) {
+    scoreMessage = '<span>You got <p>'+ correctScore +'</p> out of <p>'+ questions.length +'</p> AWESOME! You know your mushrooms!</span>';
+  }
+  finalScoreElement.innerHTML = scoreMessage;
+}
+
+
+
 
 //exitBtn button is clicked
 //
