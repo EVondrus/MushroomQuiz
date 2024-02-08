@@ -41,6 +41,7 @@ startTimer();
 
 
 /*Create variables to store the questions count, question number, counter, counterLine, width value and time value*/
+let time = 15;
 let timerInterval;
 let currentQuestionIndex = 0;
 let correctScore = 0;
@@ -293,8 +294,7 @@ function startTimer() {
       }
     } else {
       time--; // Decrement the time if it's greater than 0
-      // Update the timer display
-      timeCount.textContent = time;
+      timeCount.textContent = time;// Update the timer display
     }
   }, 1000); // Repeat every 1 second (1000 milliseconds)
 }
