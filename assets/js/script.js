@@ -7,7 +7,7 @@ const quizBox = document.querySelector(".quiz-box");
 const questionElement = document.getElementById("question");
 const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
-const timeLine = document.querySelector("header .time-line");
+const timeLineElement = document.querySelector("header .time-line");
 const timeCount = document.querySelector(".timer .timer-sec");
 
 // if startQuiz (startBtn) clicked
@@ -36,6 +36,7 @@ continueBtn.onclick = ()=>{
 //call startTimer function
 startTimer();
 //call startTimerLine function
+startTimerLine();
 };
 
 
@@ -43,6 +44,7 @@ startTimer();
 /*Create variables to store the questions count, question number, counter, counterLine, width value and time value*/
 let time = 15;
 let timerInterval;
+let timerLine;
 let currentQuestionIndex = 0;
 let correctScore = 0;
 let incorrectScore = 0;
@@ -199,7 +201,10 @@ Display nextBtn */
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
+  
   clearInterval(timerInterval); //Stop the timer when any answer buttons are clicked
+  clearInterval(timerLine); //Stop the timer line when any answer buttons are clicked
+
   if (isCorrect){
     selectedBtn.classList.add("correct");
     correctScore++;
@@ -227,7 +232,7 @@ nextBtn.addEventListener("click", function() {
   currentQuestionIndex++;
   showQuestions();
   startTimer();
-// Clear counter and counterLine function...
+  startTimerLine();
 
 
 // Hide the next button
@@ -268,10 +273,10 @@ function showResult(){
 }
 
 
-//exitBtn button is clicked
+//TODO: exitBtn button is clicked
 //
 
-//If restartBtn is clicked
+//TODO: If restartBtn is clicked
 // showQuestion function
 
 
@@ -301,16 +306,28 @@ function startTimer() {
 
 
 
-//Timer function
-//if timer is less than 0
-//clear interval, clear counter
-
-
-//startTimerLine function- Animation
+//TODO: startTimerLine function- Animation
 // Set an interval to repeatedly call the 'timer' function
 // define the timer function
 // increment the 'time' variable by 1 on each interval
 // update the width of the HTML element. The width is increased by the value of 'time' "%"
 // if the time value exceeds 100%
 //clear counterLine
+let timeLine
+
+// Start timer line function
+function startTimerLine() {
+  let time = 0; // Initialize the time for the time line
+  clearInterval(timerLine); // Clear any existing timer line interval
+  timerLine = setInterval(timer, 150); // Adjust the interval as needed
+
+  function timer() {
+    time += 1; // Increment the time by 1
+    timeLineElement.style.width = time + "%"; // Update the width of the time line element
+
+    if (time >= 100) {
+      clearInterval(timerLine); // Stop the timer when it reaches 100%
+    }
+  }
+}
 
