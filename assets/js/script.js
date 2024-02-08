@@ -189,6 +189,7 @@ console.log(answerOptions);
 document.getElementById('current-question').textContent = questionNumber;
 
 // Display the answer options to the user
+currentQuestion.answers = shuffle(currentQuestion.answers);
 currentQuestion.answers.forEach(answer => {
   let button = document.createElement("button");
   button.innerText = answer.text;
