@@ -19,14 +19,14 @@ const quitBtn = resultBox.querySelector(".buttons .quit-btn");
 startBtn.onclick = () => {
   questions = shuffle(questions); // Shuffle the questions
   infoBox.classList.add("activeInfo"); // Show the information box
-}
+};
 
 //INFO BOX
 
 // Event handler for the exit button click
 exitBtn.onclick = () => {
   infoBox.classList.remove("activeInfo");
-}
+};
 
 // Event handler for the continue button click
 continueBtn.onclick = () => {
@@ -35,10 +35,10 @@ continueBtn.onclick = () => {
   showQuestions(); //Dislpay Questions
   startTimer(); // Start Timer countdown
   startTimerLine(); // Start Timer Line
-}
+};
 
 // Variables to store various values and states during the quiz
-let time = 15; // Initial time for each question
+let time = 10; // Initial time for each question
 let timerInterval; // Interval for the timer countdown
 let timerLine; // Interval for the timer line animation
 let currentQuestionIndex = 0; // Index of the current question
@@ -48,7 +48,7 @@ let incorrectScore = 0; // Number of incorrectly answered questions
 //QUIZ BOX
 
 /**
- * Shuffles the order of elements in an array 
+ * Shuffles the order of elements in an array
  * Using the Fisher-Yates shuffle algorithm. See the README.md for acknowledgement.
  */
 function shuffle(array) {
@@ -176,6 +176,7 @@ let questions = [
  */
 function showQuestions() {
   resetState(); // Remove the previous answer options
+
   let currentQuestion = questions[currentQuestionIndex];
   let questionNumber = currentQuestionIndex + 1;
 
@@ -270,26 +271,11 @@ function showResult() {
   let scoreMessage;
   // Determine the score message based on the number of correct answers
   if (correctScore <= 4) {
-    scoreMessage =
-      "<span>You got <p>" +
-      correctScore +
-      "</p> out of <p>" +
-      questions.length +
-      "</p> Better luck next time!</span>";
+    scoreMessage = '<span><div>' + correctScore + ' out of ' + questions.length + '</div><div>Ohh! You need a little bit more practice!</div></span>';
   } else if (correctScore >= 5 && correctScore <= 7) {
-    scoreMessage =
-      "<span>You got <p>" +
-      correctScore +
-      "</p> out of <p>" +
-      questions.length +
-      "</p> Good job! Just a little more now!</span>";
+    scoreMessage = '<span>You got <div>' + correctScore + ' out of ' + questions.length + '</div><div>Good job! Just a bit more now!</div></span>';
   } else if (correctScore >= 8 && correctScore <= 10) {
-    scoreMessage =
-      "<span>You got <p>" +
-      correctScore +
-      "</p> out of <p>" +
-      questions.length +
-      "</p> AWESOME! You know your mushrooms!</span>";
+    scoreMessage = '<span>You got <div>' + correctScore + ' out of ' + questions.length + '</div><div>AWESOME! You know your mushrooms!</div></span>';
   }
   finalScoreElement.innerHTML = scoreMessage;
 }
@@ -297,7 +283,7 @@ function showResult() {
 // If the quit button is clicked, reload the current window to restart the quiz
 quitBtn.onclick = () => {
   window.location.reload();
-}
+};
 
 //If restartBtn is clicked
 restartBtn.onclick = () => {
@@ -312,7 +298,7 @@ restartBtn.onclick = () => {
   showQuestions();
   startTimer();
   startTimerLine();
-}
+};
 
 /**
  *Start timer function:
@@ -321,7 +307,7 @@ restartBtn.onclick = () => {
  * if no answer is selected, updates the display, and either moves to the next question or shows the result if no more questions remain.
  */
 function startTimer() {
-  time = 15;
+  time = 10;
   timeCount.textContent = time; // Update the timer display initially
   clearInterval(timerInterval); // Clear any existing interval, prevent overlapping timers
   timerInterval = setInterval(() => {
@@ -353,8 +339,8 @@ function startTimer() {
 function startTimerLine() {
   let time = 0;
   clearInterval(timerLine);
-  timerLine = setInterval(timer, 150);
-  //Increments the time by 1 on each interval, updates the width of the time line element,  
+  timerLine = setInterval(timer, 100);
+  //Increments the time by 1 on each interval, updates the width of the time line element,
   function timer() {
     time += 1;
     timeLineElement.style.width = time + "%";

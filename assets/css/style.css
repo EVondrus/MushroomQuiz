@@ -86,7 +86,7 @@ by adding an active class*/
 
 /* Info Box */
 .info-box {
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   top: 60%;
   left: 50%;
@@ -349,7 +349,7 @@ footer .next-btn-container {
 
 /* Result Box */
 .result-box {
-  width: 80%;
+  width: 85%;
   max-width: 600px;
   background: #faebd7;
   padding: 20px 30px;
@@ -382,16 +382,20 @@ footer .next-btn-container {
 
 .result-box .final-score span {
   font-family: "Salsa", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin: 10px 0;
   display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
-.result-box .final-score span p {
+/* Result Box Text Parts */
+.result-box .final-score span div {
   font-family: "Salsa", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 0 5px;
+  margin: 10px 0; /* Add some margin between the lines */
 }
 
 /* Result Box Buttons */
