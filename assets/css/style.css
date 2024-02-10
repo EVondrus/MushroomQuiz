@@ -403,6 +403,7 @@ footer .next-btn-container {
 /* Result Box Buttons */
 .result-box .buttons{
   display: flex;
+  justify-content: space-between;
   margin: 10px 0;
 }
 
@@ -435,13 +436,3 @@ footer .next-btn-container {
   background: #faebd7;
   color: olive;
 }
-
-
-
-
-
-
-
-
-
-
