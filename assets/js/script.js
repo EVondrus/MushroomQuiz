@@ -9,6 +9,7 @@ const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const timeLineElement = document.querySelector("header .time-line");
 const timeCount = document.querySelector(".timer .timer-sec");
+const quitBtn = resultBox.querySelector(".buttons .quit-btn");
 
 // if startQuiz (startBtn) clicked
 //show info box, add activeInfo class
@@ -290,8 +291,12 @@ function showResult(){
 }
 
 
-//TODO: exitBtn button is clicked
-//
+
+
+// if quitBtn clicked
+quitBtn.onclick = () => {
+  window.location.reload(); // Reload the current window
+}
 
 //TODO: If restartBtn is clicked
 // showQuestion function
@@ -333,7 +338,7 @@ function startTimer() {
 // update the width of the HTML element. The width is increased by the value of 'time' "%"
 // if the time value exceeds 100%
 //clear counterLine
-let timeLine
+
 
 // Start timer line function
 function startTimerLine() {
