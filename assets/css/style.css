@@ -346,31 +346,6 @@ footer .next-btn-container {
   margin-right: 10px;
 }
 
-footer .next-btn {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #faebd7;
-  background: olive;
-  padding: 10px 25px;
-  border: 2px solid #3a3a3a;
-  border-radius: 5px;
-  outline: none; /* To remove the default focus style */
-  opacity: 0; /* Hide the button */
-  pointer-events: none;
-  transform: scale(0.9); /* To make the button appear smaller */ 
-  transition: all 0.3s ease;
-}
-
-footer .next-btn:hover {
-  background: #faebd7;
-  color: olive;
-}
-
-footer .next-btn.show {
-  opacity: 1; /* Show the button */
-  pointer-events: auto; /* Make the button clickable again */
-  transform: scale(1); /* Make the button appear in its original size */
-}
 
 /* Result Box */
 .result-box {
