@@ -1,12 +1,12 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Actor&family=Salsa&display=swap');
 
-/* Asterisk wildcard selector to override default styles added by the browser */
+/* Reset default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Actor', sans-serif;
+    font-family: 'Actor', sans-serif; /* Set default font family */
 }
 
 /* Background image and General styles */
@@ -28,7 +28,7 @@ body {
   
 }
 
-/* Main Heading */
+/* HEADING */
 .title-container {
   margin: 60px 5%;
   padding: 15px;
@@ -71,7 +71,7 @@ by adding an active class*/
     transform: translate(-50%, -50%) scale(1); /* Keep elements appearing in the center of the page */
 }
 
-/* Start Button */
+/* START BUTTON */
 .start-btn button {
   font-size: 1.5rem;
   font-weight: bold;
@@ -84,7 +84,7 @@ by adding an active class*/
   cursor: pointer; /* Set cursor to pointer for better user interaction feedback */
 }
 
-/* Info Box */
+/* INFO BOX */
 .info-box {
   width: 90%;
   max-width: 600px;
@@ -94,8 +94,7 @@ by adding an active class*/
   opacity: 0;
   transition: all 0.3s ease; /* To make the transition smooth */
   pointer-events: none; /* Make the elements unclickable */
-  /*Positioning the element and giving it a slightly smaller size than its original dimensions for visual effects */
-  transform: translate(-50%, -50%) scale(0.9); 
+  transform: translate(-50%, -50%) scale(0.9); /* Giving the element a slightly smaller size than its original dimensions for visual effects */
 }
 
 /* Title styles of Info Box */
@@ -141,7 +140,7 @@ by adding an active class*/
   color: #82820F;
 }
 
-/* Button styles for exit and continue */
+/* Styles for Exit and Continue Buttons */
 .info-box .buttons {
   height: 70px;
   display: flex;
@@ -163,9 +162,9 @@ by adding an active class*/
   padding: 15px 20px;
   border: 2px solid #3a3a3a;
   border-radius: 5px;
-  outline: none; /* To remove the default focus style */
+  outline: none; /* Remove the default focus style */
   cursor: pointer; 
-  transition: all 0.3s ease; /* Smoothing transition when becoming visible */
+  transition: all 0.3s ease; 
   
 }
 
@@ -174,7 +173,8 @@ by adding an active class*/
   margin-right: 15px;
 }
 
-/* Quiz Box */
+/* QUIZ BOX */
+
 .quiz-box {
   width: 80%;
   max-width: 600px;
@@ -184,20 +184,20 @@ by adding an active class*/
   transition: all 0.3s ease; 
   pointer-events: none; /* Make the elements unclickable */
   transform: translate(-50%, -40%) scale(0.9);
-  box-shadow: 0 0 5px 5px rgb(58, 58, 58); /* To give a 3D effect behind the container*/
+  box-shadow: 0 0 5px 5px rgb(58, 58, 58); /* Gives a 3D effect behind the container*/
 }
 
-/* Quiz Box Header */
+/* Header in the Quiz box */
 .quiz-box header {
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  border-radius: 5px 5px 0 0; /* Rounded corner effect on the top*/
+  border-radius: 5px 5px 0 0; 
   font-size: 1.2rem;
   font-weight: bold;
-  position: relative; /* To position the timer */
+  position: relative; /* Position the timer */
   z-index: 2; /* Keeping the element on top of the other elements */
   box-shadow: 0 3px 5px 1px rgba(58, 58, 58, 0.3);
   
@@ -247,18 +247,17 @@ by adding an active class*/
   user-select: none; /* Prevent the user from selecting the numbers*/
 }
 
-/* Time Line in Quiz header - Animation in JS*/
+/* Timer Line - Animation in JS*/
 .quiz-box .time-line {
   height: 4px;
   width: 100%;
-  /* Position the line at the bottom of header*/
-  position: absolute; 
+  position: absolute; /* Position the line Absolute, at the bottom of header*/
   bottom: 0; 
   left: 0; 
   background: #3a3a3a;
 }
 
-/* Quiz Box Main Section, Question and Answers */
+/* Main Section in the Quiz Box, Question and Answers */
 section {
   padding: 25px 30px 20px 30px;
 
@@ -306,11 +305,8 @@ section .answer-options .answer-btn.incorrect {
 }
 
 section .answer-options .answer-btn.disabled {
-  /* So it's not possible to click other buttons */
-  pointer-events: none;
+  pointer-events: none;  /* It will not possible to click other buttons */
 }
-
-/* ADD ICONS CHECK AND CROSS ICONS AND THEIR STYLES */
 
 /* Footer of Quiz box */
 footer {
@@ -323,6 +319,7 @@ footer {
   box-shadow: 0 0 5px 5px rgba(58, 58, 58, 0.2); 
 }
 
+/* Styling for the current score */
 footer .current-score {
   margin-left: 10px;
 }
@@ -343,12 +340,8 @@ footer .current-score span {
   padding: 0 10px;
 }
 
-footer .next-btn-container {
-  margin-right: 10px;
-}
+/* RESULT BOX */
 
-
-/* Result Box */
 .result-box {
   top: 62%;
   width: 85%;
@@ -366,14 +359,14 @@ footer .next-btn-container {
   box-shadow: 0 0 5px 5px rgba(58, 58, 58, 0.5);
 }
 
-/* Result Box Image */
+/* Image */
 .result-box img {
   width: 125px;
   height: 125px;
   margin: 20px 0;
 }
 
-/* Result Box Text */
+/* Title */
 .result-box .result-title {
   font-size: 2rem;
   font-family: "Salsa", sans-serif;
@@ -382,6 +375,7 @@ footer .next-btn-container {
   margin-bottom: 20px;
 }
 
+/* Styling for the score inside the result box */
 .result-box .final-score span {
   font-family: "Salsa", sans-serif;
   font-size: 1.3rem;
@@ -392,12 +386,11 @@ footer .next-btn-container {
   align-items: center; 
 }
 
-/* Result Box Text Parts */
 .result-box .final-score span div {
   font-family: "Salsa", sans-serif;
   font-size: 1.3rem;
   padding: 0 5px;
-  margin: 10px 0; /* Add some margin between the lines */
+  margin: 10px 0; /* Adding some margin between the lines */
 }
 
 /* Result Box Buttons */
@@ -419,7 +412,6 @@ footer .next-btn-container {
   border-radius: 5px;
   transition: all 0.3s ease;
   cursor: pointer;
-  
 }
 
 .buttons button.quit-btn {
