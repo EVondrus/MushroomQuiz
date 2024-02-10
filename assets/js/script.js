@@ -17,8 +17,12 @@ const quitBtn = resultBox.querySelector(".buttons .quit-btn");
 
 // Event handler for the start button click
 startBtn.onclick = () => {
-  questions = shuffle(questions); // Shuffle the questions
-  infoBox.classList.add("activeInfo"); // Show the information box
+  try {
+    questions = shuffle(questions); // Shuffle the questions
+    infoBox.classList.add("activeInfo"); // Show the information box
+  } catch (error) {
+    alert("Oops! Gremlins invaded the Mushroom Quiz machinery. Try again later!");
+  }
 };
 
 //INFO BOX
