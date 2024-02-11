@@ -1,4 +1,4 @@
-//Select the elements required
+// Select DOM elements
 const startBtn = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
 const exitBtn = infoBox.querySelector(".buttons .quit-btn");
@@ -12,6 +12,14 @@ const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const restartBtn = resultBox.querySelector(".buttons .restart-btn");
 const quitBtn = resultBox.querySelector(".buttons .quit-btn");
+
+// Variables for quiz state
+let time = 10; // Initial time for each question
+let timerInterval; // Interval for the timer countdown
+let timerLine; // Interval for the timer line animation
+let currentQuestionIndex = 0; // Index of the current question
+let correctScore = 0; // Number of correctly answered questions
+let incorrectScore = 0; // Number of incorrectly answered questions
 
 // START BUTTON
 
@@ -40,14 +48,6 @@ continueBtn.onclick = () => {
   startTimer(); // Start Timer countdown
   startTimerLine(); // Start Timer Line
 };
-
-// Variables to store various values and states during the quiz
-let time = 10; // Initial time for each question
-let timerInterval; // Interval for the timer countdown
-let timerLine; // Interval for the timer line animation
-let currentQuestionIndex = 0; // Index of the current question
-let correctScore = 0; // Number of correctly answered questions
-let incorrectScore = 0; // Number of incorrectly answered questions
 
 //QUIZ BOX
 
@@ -186,8 +186,7 @@ function showQuestions() {
 
   question.innerHTML = questionNumber + ". " + currentQuestion.question;
   document.getElementById("current-question").textContent = questionNumber; // Update the current question number in the span
-  // Shuffle the answer options to randomize their order
-  currentQuestion.answers = shuffle(currentQuestion.answers);
+  currentQuestion.answers = shuffle(currentQuestion.answers);// Shuffle the answer options to randomize their order
   // Iterate through each answer option and create a button for it
   currentQuestion.answers.forEach((answer) => {
     let button = document.createElement("button");
@@ -284,14 +283,14 @@ function showResult() {
   finalScoreElement.innerHTML = scoreMessage;
 }
 
-// If the quit button is clicked, reload the current window to restart the quiz
+// Event listener for the quit button, reloads the window to restart the quiz upon click
 quitBtn.onclick = () => {
   window.location.reload();
 };
 
-//If restartBtn is clicked
+// Event listener for the restart button
 restartBtn.onclick = () => {
-  // Remove the result box and show the quiz box again
+  // Remove the result box and show the quiz box
   resultBox.classList.remove("activeResult");
   quizBox.classList.add("activeQuiz");
   // Reset question index and scores

@@ -88,8 +88,6 @@ by adding an active class*/
 .info-box {
   width: 90%;
   max-width: 600px;
-  top: 60%;
-  left: 50%;
   background: #faebd7;
   opacity: 0;
   transition: all 0.3s ease; /* To make the transition smooth */
@@ -177,8 +175,8 @@ by adding an active class*/
 
 .quiz-box {
   width: 80%;
-  max-width: 600px;
-  top: 62%;
+  max-width: 700px;
+  top: 55%;
   background: #faebd7;
   opacity: 0;
   transition: all 0.3s ease; 
@@ -343,7 +341,7 @@ footer .current-score span {
 /* RESULT BOX */
 
 .result-box {
-  top: 62%;
+  top: 55%;
   width: 85%;
   max-width: 600px;
   background: #faebd7;
@@ -427,4 +425,12 @@ footer .current-score span {
 .buttons button.restart-btn:hover {
   background: #faebd7;
   color: olive;
+}
+
+
+
+@media screen and (max-width: 365px) {
+  .title-container {
+    display: none; /* Hide the title container */
+  }
 }
