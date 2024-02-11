@@ -229,6 +229,7 @@ function selectAnswer(e) {
     document.getElementById("correct-score").textContent = correctScore;
   } else {
     selectedBtn.classList.add("incorrect");
+    selectedBtn.classList.add("apply-shake"); // Add shake animation class to incorrect answer button
     incorrectScore++;
     document.getElementById("incorrect-score").textContent = incorrectScore;
   }

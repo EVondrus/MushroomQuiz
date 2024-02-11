@@ -427,6 +427,36 @@ footer .current-score span {
   color: olive;
 }
 
+/* Keyframe animation for a shaking effect
+*  Credit: Dane Parchment - https://teamtreehouse.com/community/shake-effect-with-javascript-only
+*/
+@keyframes shake {
+  /* At 10% and 90% of the animation duration, translate the element to the left by 1px */
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  /* At 20% and 80%, translate the element to the right by 2px */
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  /* At 30%, 50%, and 70%, translate the element to the left by 4px */
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  /* At 40% and 60%, translate the element to the right by 4px */
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+.apply-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
 
 
 @media screen and (max-width: 365px) {
