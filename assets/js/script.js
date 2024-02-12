@@ -324,6 +324,7 @@ function startTimer() {
         currentQuestionIndex++;
         showQuestions();
         startTimer();
+        startTimerLine();
       } else {
         showResult();
       }
