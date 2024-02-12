@@ -265,8 +265,9 @@ section .quiz-container h2 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   text-align: left;
-
+  height: 50px;
 }
+
 /* Answers */
 section .answer-options .answer-btn {
   background-color: #faebd7;
