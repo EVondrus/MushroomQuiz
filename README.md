@@ -282,10 +282,13 @@ The content of this quiz draws inspiration from the shared interests and experti
 I want to tank to the below artists for their nice work!
 
 Background image:
-- [Freepik](https://www.freepik.com/free-vector/engraving-hand-drawn-mushroom-pattern_13380758.htm) - Hand drawn mushroom pattern
+- [Freepik](https://www.freepik.com/free-vector/engraving-hand-drawn-mushroom-pattern_13380758.htm) - Hand drawn mushroom pattern.
 
 Mushroom icon created by:
-- [Rabbixcons - Flaticon](https://www.flaticon.com/free-icon/mushrooms_2541502) - One happy mushroom and two small firends
+- [Rabbixcons - Flaticon](https://www.flaticon.com/free-icon/mushrooms_2541502) - One happy mushroom and two small firends.
+
+Mushroom image on 404 - Page:
+- [brgfx - Freepik](https://www.freepik.com/free-vector/single-mushroom-with-face_20438965.htm#page=4&query=walking%20mushroom&position=11&from_view=search&track=ais&uuid=fe5c4d05-9104-4479-9a7d-052ff55d27ef) - Single mushroom with surpriced face.
 
 
 ### Resources Used
