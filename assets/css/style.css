@@ -46,6 +46,10 @@ h1 {
   margin: 0;
 }
 
+.title-container.hide {
+  display: none;
+}
+
 /* Positioning all the boxes Absolute, in the center of the page */
 .start-btn,
 .info-box,

@@ -1,4 +1,5 @@
-// Select DOM elements
+// Selected DOM elements
+const heading = document.querySelector(".title-container");
 const startBtn = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
 const exitBtn = infoBox.querySelector(".buttons .quit-btn");
@@ -12,6 +13,7 @@ const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const restartBtn = resultBox.querySelector(".buttons .restart-btn");
 const quitBtn = resultBox.querySelector(".buttons .quit-btn");
+
 
 // Variables for quiz state
 let time = 10; // Initial time for each question
@@ -27,6 +29,7 @@ let incorrectScore = 0; // Number of incorrectly answered questions
 startBtn.onclick = () => {
   try {
     questions = shuffle(questions); // Shuffle the questions
+    heading.classList.add("hide"); // Hide the heading element
     infoBox.classList.add("activeInfo"); // Show the information box
   } catch (error) {
     alert("Oops! Gremlins invaded the Mushroom Quiz machinery. Try again later!");
@@ -75,7 +78,7 @@ function shuffle(array) {
   return array;
 }
 
-// Create an array passing the questions, answer options and set the correct answer
+// Array passing the questions, answer options and setting the correct answer
 let questions = [
   {
     question: "What is the main purpose of a mushroom cap?",
@@ -172,11 +175,10 @@ let questions = [
 ];
 
 /**
- * Function to display the current question and its answer options to the user.
- * It clears the previous answer options, then retrieves the current question from the 'questions' array.
- * The question number is updated and displayed along with the question text.
- * Answer options are shuffled for each question and displayed as buttons.
- * Event listeners are set for each answer button to handle user selection.
+ * Displays the current question and its answer options to the user.
+ * Updates the question number and displays the question text.
+ * Shuffles answer options and displays them as buttons.
+ * Sets event listeners for answer buttons to handle user selection.
  */
 function showQuestions() {
   resetState(); // Remove the previous answer options
@@ -212,8 +214,61 @@ function resetState() {
 }
 
 /**
- * Handles the user's selection of an answer.
- * @param {Event} e - The event object triggered by the button click.
+ * Starts the timer for each question.
+ * Updates the timer display every second.
+ * Increments the incorrect score if time runs out without an answer.
+ * Moves to the next question or shows the Result box.
+ */
+function startTimer() {
+  time = 10;
+  timeCount.textContent = time; // Update the timer display initially
+  clearInterval(timerInterval); // Clear any existing interval, prevent overlapping timers
+  timerInterval = setInterval(() => {
+    if (time <= 0) {
+      clearInterval(timerInterval); // Stop the timer if time reaches 0
+      incorrectScore = incorrectScore + 1; // Incrementing incorrect score if no answer selected
+      document.getElementById("incorrect-score").textContent = incorrectScore;
+
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestions();
+        startTimer();
+        startTimerLine();
+      } else {
+        showResult();
+      }
+    } else {
+      time--; // Decrement the time if it's greater than 0
+      timeCount.textContent = time; // Update the timer display
+    }
+  }, 1000); // Repeat every 1 second (1000 milliseconds)
+}
+
+
+/**
+ * Initializes the timer line and updates its width until reaching 100% or when an answer is selected.
+ * Stops the timer when the width reaches 100% or when an answer is selected.
+ */
+function startTimerLine() {
+  let time = 0;
+  clearInterval(timerLine);
+  timerLine = setInterval(timer, 100);
+  //Increments the time by 1 on each interval, updates the width of the time line element,
+  function timer() {
+    time += 1;
+    timeLineElement.style.width = time + "%";
+
+    if (time >= 100) {
+      clearInterval(timerLine);
+    }
+  }
+}
+
+/**
+ * Displays the current question and its answer options to the user.
+ * Updates the question number and displays the question text.
+ * Shuffles answer options and displays them as buttons.
+ * Sets event listeners for answer buttons to handle user selection.
  */
 function selectAnswer(e) {
   let selectedBtn = e.target;
@@ -261,10 +316,11 @@ function showNextQuestion() {
 // RESULT BOX
 
 /**
- * showResult function:
- * Removes the activeInfo class from infoBox, removes the activeQuiz class from quizBox,
- * and adds the activeResult class to resultBox to display the result. Determines the score message
- * based on the number of correct answers and updates the final score element accordingly.
+ * Displays the result of the quiz to the user.
+ * Removes the activeInfo class from infoBox and activeQuiz class from quizBox.
+ * Adds the activeResult class to resultBox to display the result.
+ * Determines the score message based on the number of correct answers.
+ * Updates the final score element with the score message.
  */
 function showResult() {
   infoBox.classList.remove("activeInfo");
@@ -284,12 +340,12 @@ function showResult() {
   finalScoreElement.innerHTML = scoreMessage;
 }
 
-// Event listener for the quit button, reloads the window to restart the quiz upon click
+// Event listener for the Quit quiz button, reloads the window to restart the quiz upon click
 quitBtn.onclick = () => {
   window.location.reload();
 };
 
-// Event listener for the restart button
+// Event listener for the Play again button
 restartBtn.onclick = () => {
   // Remove the result box and show the quiz box
   resultBox.classList.remove("activeResult");
@@ -303,55 +359,3 @@ restartBtn.onclick = () => {
   startTimer();
   startTimerLine();
 };
-
-/**
- *Start timer function:
- * Resets the timer to 15 seconds, updates the timer display, clears any existing interval to prevent overlapping timers,
- * and starts a new interval that decrements the timer every second. If the time reaches 0, increments the incorrect score
- * if no answer is selected, updates the display, and either moves to the next question or shows the result if no more questions remain.
- */
-function startTimer() {
-  time = 10;
-  timeCount.textContent = time; // Update the timer display initially
-  clearInterval(timerInterval); // Clear any existing interval, prevent overlapping timers
-  timerInterval = setInterval(() => {
-    if (time <= 0) {
-      clearInterval(timerInterval); // Stop the timer if time reaches 0
-      incorrectScore = incorrectScore + 1; // Incrementing incorrect score if no answer selected
-      document.getElementById("incorrect-score").textContent = incorrectScore;
-
-      if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        showQuestions();
-        startTimer();
-        startTimerLine();
-      } else {
-        showResult();
-      }
-    } else {
-      time--; // Decrement the time if it's greater than 0
-      timeCount.textContent = time; // Update the timer display
-    }
-  }, 1000); // Repeat every 1 second (1000 milliseconds)
-}
-
-/**
- * Start timer line function:
- * Initializes the time for the timer line, clears any existing timer line interval, and sets a new interval
- * for updating the width of the timer line element. The interval adjusts the time and updates the width
- * until the time reaches 100%, at which point the timer is stopped.
- */
-function startTimerLine() {
-  let time = 0;
-  clearInterval(timerLine);
-  timerLine = setInterval(timer, 100);
-  //Increments the time by 1 on each interval, updates the width of the time line element,
-  function timer() {
-    time += 1;
-    timeLineElement.style.width = time + "%";
-
-    if (time >= 100) {
-      clearInterval(timerLine);
-    }
-  }
-}
