@@ -185,7 +185,7 @@ by adding an active class*/
   opacity: 0;
   transition: all 0.3s ease; 
   pointer-events: none; /* Make the elements unclickable */
-  transform: translate(-50%, -40%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
   box-shadow: 0 0 5px 5px rgb(58, 58, 58); /* Gives a 3D effect behind the container*/
 }
 
@@ -463,9 +463,11 @@ footer .current-score span {
 }
 
 
-
-@media screen and (max-width: 365px) {
-  .title-container {
-    display: none; /* Hide the title container */
+@media screen and (max-width: 300px) {
+  section .quiz-container h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
   }
 }
+
+
