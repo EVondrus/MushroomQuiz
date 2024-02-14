@@ -220,7 +220,7 @@ function resetState() {
  * Moves to the next question or shows the Result box.
  */
 function startTimer() {
-  time = 10;
+  time = 10000;
   timeCount.textContent = time; // Update the timer display initially
   clearInterval(timerInterval); // Clear any existing interval, prevent overlapping timers
   timerInterval = setInterval(() => {
