@@ -247,7 +247,8 @@ Conduct a thorough review with friends and family to validate functionality and 
     - [Responsinator](http://www.responsinator.com/?url=evondrus.github.io%2FMushroomQuiz%2F)
 
 ### Fixed Bugs
-- 
+- The score was not incremented for an incorrect answer if the user didn't select an answer and the next question was displayed.
+- Adjusted the showNextQuestion function to correctly increment the score for an incorrect answer even if the user didn't select an option.
 
 ### Known Bugs
  - An alert message intended to notify users in case of malfunction within the code may not display the custom message as expected.
@@ -329,7 +330,6 @@ Mushroom image on 404 - Page:
 - I used the Fisher Yates Shuffle in order to shuffle the questions and answers which I learned about in this tutorial - [Shuffle an array](https://javascript.info/task/shuffle)
 - My mentor, Antonio Rodriquez, explained about the setTimeout method.
 - The shake animation effect for incorrect answer selection came from [Dane Parchment](https://teamtreehouse.com/community/shake-effect-with-javascript-only).
-
 
 
 ## Acknowledgements

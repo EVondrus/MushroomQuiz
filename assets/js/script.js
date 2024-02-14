@@ -61,7 +61,7 @@ continueBtn.onclick = () => {
 
 /**
  * Shuffles the order of elements in an array
- * Using the Fisher-Yates shuffle algorithm. See the README.md for acknowledgement.
+ * Using the Fisher-Yates shuffle algorithm. See the Credits section in the README file.
  */
 function shuffle(array) {
   let currentIndex = array.length,
@@ -259,7 +259,7 @@ function startTimerLine() {
   let time = 0;
   clearInterval(timerLine);
   timerLine = setInterval(timer, 100);
-  //Increments the time by 1 on each interval, updates the width of the time line element,
+  //Increments the time by 1 on each interval, updates the width of the time line element
   function timer() {
     time += 1;
     timeLineElement.style.width = time + "%";
