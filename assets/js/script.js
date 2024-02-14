@@ -334,11 +334,11 @@ function showResult() {
   let scoreMessage;
   // Determine the score message based on the number of correct answers
   if (correctScore <= 4) {
-    scoreMessage = '<span><div>' + correctScore + ' out of ' + questions.length + '</div><div>Ohh! You need a little bit more practice!</div></span>';
+    scoreMessage = '<span>You mushed<div>' + correctScore + ' out of ' + questions.length + '</div><div>Ohh! You need a little bit more practice!</div></span>';
   } else if (correctScore >= 5 && correctScore <= 7) {
-    scoreMessage = '<span>You got <div>' + correctScore + ' out of ' + questions.length + '</div><div>Good job! <br> Just a bit more now!</div></span>';
+    scoreMessage = '<span>You mushed<div>' + correctScore + ' out of ' + questions.length + '</div><div>Good job! <br> Just a bit more now!</div></span>';
   } else if (correctScore >= 8 && correctScore <= 10) {
-    scoreMessage = '<span>You got <div>' + correctScore + ' out of ' + questions.length + '</div><div>AWESOME! <br> You know your mushrooms!</div></span>';
+    scoreMessage = '<span>You mushed<div>' + correctScore + ' out of ' + questions.length + '</div><div>AWESOME! <br> You know your mushrooms!</div></span>';
   }
   finalScoreElement.innerHTML = scoreMessage;
 }
