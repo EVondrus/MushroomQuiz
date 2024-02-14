@@ -125,9 +125,10 @@ I created these wireframes using Balsamiq.
 <details>
 <summary>Wireframe</summary>
 
-![Wireframe]()
-![Wireframe]()
-![Wireframe]()
+![Wireframe Start Page](./docs/wireframes/start-page.png)
+![Wireframe Info-box](./docs/wireframes/info-box.png)
+![Wireframe Quiz-box](./docs/wireframes/quiz-box.png)
+![Wireframe Result-box](./docs/wireframes/result-box.png)
  </details>
 
 
