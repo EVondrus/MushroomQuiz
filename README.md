@@ -210,8 +210,10 @@ Ideas for future implementations I would like to include are:
     - No errors were found when passing through the official W3C CSS Validator 
         - [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fevondrus.github.io%2FMushroomQuiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)
 - #### Javascript
-    - No errors or warnings were returned when passing through the the 
-      - [JSHint Validator](https://jshint.com/)
+    - No errors or warnings were returned when passing through the the  [JSHint Validator](https://jshint.com/)
+
+  ![JSHint Validator Results](./docs/readme_images/jshint-img.png)
+  
 
 ### Accessibility
 
