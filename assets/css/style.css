@@ -174,7 +174,7 @@ by adding an active class*/
 .quiz-box {
   width: 80%;
   max-width: 700px;
-  top: 55%;
+  top: 50%;
   background: #faebd7;
   opacity: 0;
   transition: all 0.3s ease;
@@ -493,13 +493,36 @@ footer .current-score span {
   }
 
   .start-btn button {
-    padding: 12px;
+    padding: 10px;
+  }
+
+  section .info-box .info {
+    font-size: 1rem;
+    margin-bottom: 0px;
+  }
+
+  .info-num {
+    font-size: 1rem;
   }
 
   section .quiz-container h2 {
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
+
+  .result-box .result-title {
+    font-size: 1.2rem;
+  }
+
+  .result-box .final-score span div {
+    font-size: 1.1rem;
+  }
+
+  .result-box .buttons button {
+    font-size: 1rem;
+  }
+
+
 }
 
 @media screen and (max-width: 1000px) and (orientation: landscape) {
