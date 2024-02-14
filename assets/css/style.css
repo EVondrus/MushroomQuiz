@@ -336,7 +336,7 @@ footer .current-score span {
 /* RESULT BOX */
 
 .result-box {
-  top: 55%;
+  top: 50%;
   width: 85%;
   max-width: 600px;
   background: #faebd7;
@@ -496,18 +496,24 @@ footer .current-score span {
     padding: 10px;
   }
 
-  section .info-box .info {
+  .info-box .info-list {
     font-size: 1rem;
-    margin-bottom: 0px;
   }
 
-  .info-num {
+  .info-box .info-list .info-num {
     font-size: 1rem;
   }
+
 
   section .quiz-container h2 {
     font-size: 1.1rem;
     margin-bottom: 20px;
+  }
+
+  section .answer-options .answer-btn {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 5px;
   }
 
   .result-box .result-title {
@@ -546,9 +552,6 @@ footer .current-score span {
     font-size: 1rem;
   }
 
-  .result-box {
-    top: 60%;
-  }
 
   .result-box.activeResult {
     margin-top: 15px;
