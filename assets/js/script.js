@@ -23,6 +23,8 @@ let currentQuestionIndex = 0; // Index of the current question
 let correctScore = 0; // Number of correctly answered questions
 let incorrectScore = 0; // Number of incorrectly answered questions
 
+// Credits: Ali Aslan for giving me the inspiration on how to build my quiz. See further in the README file.
+
 // START BUTTON
 
 // Event handler for the start button click
@@ -183,6 +185,7 @@ let questions = [
  * Shuffles answer options and displays them as buttons.
  * Sets event listeners for answer buttons to handle user selection.
  */
+// Credits: GreatStack for the integration of the questions and answers into HTML. See further in the README file.
 function showQuestions() {
   resetState(); // Remove the previous answer options
 

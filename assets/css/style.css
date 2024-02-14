@@ -446,7 +446,7 @@ footer .current-score span {
 }
 
 /* Keyframe animation for a shaking effect
-*  Credit: Dane Parchment - https://teamtreehouse.com/community/shake-effect-with-javascript-only
+*  Credits: Dane Parchment - See further in the README file.
 */
 @keyframes shake {
   /* At 10% and 90% of the animation duration, translate the element to the left by 1px */

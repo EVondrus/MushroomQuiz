@@ -247,10 +247,10 @@ Conduct a thorough review with friends and family to validate functionality and 
     - [Responsinator](http://www.responsinator.com/?url=evondrus.github.io%2FMushroomQuiz%2F)
 
 ### Fixed Bugs
+- 
 
 ### Known Bugs
-No known bugs. 
- - Very welcome to give me a notice if any bugs are detected!
+ - An alert message intended to notify users in case of malfunction within the code may not display the custom message as expected.
 
 ## Technologies 
 
@@ -302,7 +302,7 @@ To clone this repository follow the below steps:
 ## Credits
 
 ### Content
-The content of this quiz draws inspiration from the shared interests and expertise of me and my partner, stemming from a passion for mushrooms and cultivation methods. Together we came up with the questions and answer options for this quiz.
+The content of this quiz draws inspiration from the shared interests and expertise of my partner, stemming from a passion for mushrooms and cultivation methods. Together we came up with the questions and answer options for this quiz.
 
 
 ### Media
