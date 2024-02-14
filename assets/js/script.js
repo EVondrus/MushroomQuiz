@@ -7,13 +7,12 @@ const continueBtn = infoBox.querySelector(".buttons .restart-btn");
 const quizBox = document.querySelector(".quiz-box");
 const timeCount = document.querySelector(".timer .timer-sec");
 const timeLineElement = document.querySelector("header .time-line");
-const questionElement = document.getElementById("question");
 const question = document.getElementById("question");
 const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const restartBtn = resultBox.querySelector(".buttons .restart-btn");
 const quitBtn = resultBox.querySelector(".buttons .quit-btn");
-const pageFooter = document.querySelector(".page-footer")
+const pageFooter = document.querySelector(".page-footer");
 
 
 // Variables for quiz state
@@ -43,7 +42,7 @@ startBtn.onclick = () => {
 // Event handler for the exit button click
 exitBtn.onclick = () => {
   infoBox.classList.remove("activeInfo");
-  heading.classList.remove("hide")
+  heading.classList.remove("hide");
   pageFooter.classList.remove("hide");
 };
 
