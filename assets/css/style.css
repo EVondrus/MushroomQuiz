@@ -480,17 +480,29 @@ footer .current-score span {
 }
 
 
-/* MEDIA QUERIES for Landscape Mode */
-@media screen and (max-width: 300px) {
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 400px) {
+
+  .title-container {
+    margin: 15px 5%;
+  }
+
+  .start-btn {
+    top: 60%
+  }
+
+  .start-btn button {
+    padding: 12px;
+  }
+
   section .quiz-container h2 {
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
-
 }
 
 @media screen and (max-width: 1000px) and (orientation: landscape) {
-
 
   .title-container{
     margin: 15px 5%;
