@@ -23,13 +23,6 @@ let currentQuestionIndex = 0; // Index of the current question
 let correctScore = 0; // Number of correctly answered questions
 let incorrectScore = 0; // Number of incorrectly answered questions
 
-window.addEventListener('beforeunload', function(event) {
-  // Customize the confirmation message to inform the user
-  event.returnValue = 'Are you sure you want to leave the Mushroom Quiz? Your progress will be mushed.';
-  // Some browsers require a return value
-  return 'Are you sure you want to leave the Mushroom Quiz? Your progress will be mushed.';
-});
-
 // START BUTTON
 
 // Event handler for the start button click
