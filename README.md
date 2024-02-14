@@ -11,7 +11,7 @@ It aims to spark curiosity about the different types of mushrooms and their char
 
 ![Mushroom Quiz Am I Responsive Image]()
 
-You can visit the Live Website [here](https://github.com/EVondrus/MushroomQuiz.git)
+You can visit the Live Website [here](https://evondrus.github.io/MushroomQuiz/)
 
 You can visit the GitHub Repository [here](https://github.com/EVondrus/MushroomQuiz.git)
 
