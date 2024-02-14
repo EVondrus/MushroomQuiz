@@ -13,6 +13,7 @@ const answerOptions = document.querySelector(".answer-options");
 const resultBox = document.querySelector(".result-box");
 const restartBtn = resultBox.querySelector(".buttons .restart-btn");
 const quitBtn = resultBox.querySelector(".buttons .quit-btn");
+const pageFooter = document.querySelector(".page-footer")
 
 
 // Variables for quiz state
@@ -30,6 +31,7 @@ startBtn.onclick = () => {
   try {
     questions = shuffle(questions); // Shuffle the questions
     heading.classList.add("hide"); // Hide the heading element
+    pageFooter.classList.add("hide");
     infoBox.classList.add("activeInfo"); // Show the information box
   } catch (error) {
     alert("Oops! Gremlins invaded the Mushroom Quiz machinery. Try again later!");
@@ -41,6 +43,8 @@ startBtn.onclick = () => {
 // Event handler for the exit button click
 exitBtn.onclick = () => {
   infoBox.classList.remove("activeInfo");
+  heading.classList.remove("hide")
+  pageFooter.classList.remove("hide");
 };
 
 // Event handler for the continue button click
