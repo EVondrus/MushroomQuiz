@@ -86,6 +86,11 @@ by adding an active class*/
   cursor: pointer; /* Set cursor to pointer for better user interaction feedback */
 }
 
+.start-btn button:hover {
+  background: #ff5a4e;
+  color: #3a3a3a;
+}
+
 /* INFO BOX */
 .info-box {
   width: 90%;
@@ -489,7 +494,7 @@ footer .current-score span {
   }
 
   .start-btn {
-    top: 60%
+    top: 55%
   }
 
   .start-btn button {
