@@ -186,6 +186,11 @@ The website ensures a responsive design and includes:
   
   ![screenshot of the favicon](./docs/readme_images/favicon-img.png)
 
+- 404 - Page not found
+  - A custom 404 page is a helpful feature that provides users with a more engaging and informative experience when they land on a non-existent page or encounter broken links within the application.
+
+  ![screenshot of the 404-page](./docs/readme_images/error404-img.png)
+
 ### Future Implementations
 
 Ideas for future implementations I would like to include are:
